@@ -1,4 +1,5 @@
 import 'package:MIPELUQUERIAPP/constants.dart';
+import 'package:MIPELUQUERIAPP/routes.dart';
 import 'package:MIPELUQUERIAPP/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }

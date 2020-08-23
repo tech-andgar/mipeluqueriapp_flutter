@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:MIPELUQUERIAPP/components/button/default_button.dart';
 import 'package:MIPELUQUERIAPP/constants.dart';
 import 'package:MIPELUQUERIAPP/screens/splash/components/splash_content.dart';
