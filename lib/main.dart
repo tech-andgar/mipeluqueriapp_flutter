@@ -1,6 +1,6 @@
-import 'package:MIPELUQUERIAPP/constants.dart';
 import 'package:MIPELUQUERIAPP/routes.dart';
 import 'package:MIPELUQUERIAPP/screens/splash/splash_screen.dart';
+import 'package:MIPELUQUERIAPP/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,15 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: 'QuickSand',
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: themeLight(),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );
