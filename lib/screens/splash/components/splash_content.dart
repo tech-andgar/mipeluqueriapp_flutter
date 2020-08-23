@@ -1,7 +1,7 @@
-
 import 'package:MIPELUQUERIAPP/constants.dart';
 import 'package:MIPELUQUERIAPP/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
@@ -32,11 +32,17 @@ class SplashContent extends StatelessWidget {
         Spacer(
           flex: 2,
         ),
-        Image.asset(
-          image,
-          height: getProportionteScreenHeight(265),
-          width: getProportionteScreenWidth(235),
-        )
+        (image.contains('svg'))
+            ? SvgPicture.asset(
+                image,
+                height: getProportionteScreenHeight(265),
+                width: getProportionteScreenWidth(235),
+              )
+            : Image.asset(
+                image,
+                height: getProportionteScreenHeight(265),
+                width: getProportionteScreenWidth(235),
+              )
       ],
     );
   }
