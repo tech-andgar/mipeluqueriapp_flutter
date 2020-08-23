@@ -1,22 +1,23 @@
+import 'package:flutter/material.dart';
 import 'package:MIPELUQUERIAPP/components/button/default_button.dart';
 import 'package:MIPELUQUERIAPP/constants.dart';
+import 'package:MIPELUQUERIAPP/screens/sign_in/sign_in_screen.dart';
 import 'package:MIPELUQUERIAPP/screens/splash/components/splash_content.dart';
 import 'package:MIPELUQUERIAPP/size_config.dart';
-import 'package:flutter/material.dart';
 
-class Body extends StatefulWidget {
-  Body({Key key}) : super(key: key);
+class SplashBody extends StatefulWidget {
+  SplashBody({Key key}) : super(key: key);
   @override
-  _BodyState createState() => _BodyState();
+  _SplashBodyState createState() => _SplashBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
 
   List<Map<String, String>> splashData = [
-    {"text": "Mi PeluqueriApp", 'image': 'assets/images/splash_1.jpg'},
+    {"text": "Mi PeluqueriApp", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
     {"text": "Bienvienido al Mi PeluqueriApp, vamos pedirla!", 'image': 'assets/images/splash_1.jpg'},
-    {"text": "Nos Ayuda personas conectar con los profesionales en Colombia", 'image': 'assets/images/splash_2.jpg'},
+    {"text": "Nos ayuda personas conectar con los profesionales en Colombia", 'image': 'assets/images/splash_2.jpg'},
   ];
 
   @override
@@ -65,7 +66,9 @@ class _BodyState extends State<Body> {
                       height: getProportionteScreenWidth(56),
                       child: DefaultButton(
                         text: 'Contiunar',
-                        press: () {},
+                        press: () {
+                          Navigator.pushNamed(context, SignInScreen.routeName);
+                        },
                       ),
                     ),
                     Spacer(),
