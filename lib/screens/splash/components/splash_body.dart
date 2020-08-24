@@ -15,7 +15,7 @@ class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
 
   List<Map<String, String>> splashData = [
-    {"text": "Mi PeluqueriApp", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
+    {"text": "Lorem luspum", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
     {"text": "Bienvienido al Mi PeluqueriApp, vamos pedirla!", 'image': 'assets/images/splash_1.jpg'},
     {"text": "Nos ayuda personas conectar con los profesionales en Colombia", 'image': 'assets/images/splash_2.jpg'},
   ];

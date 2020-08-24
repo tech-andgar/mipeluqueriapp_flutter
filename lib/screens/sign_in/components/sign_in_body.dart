@@ -21,11 +21,11 @@ class SignInBody extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 'assets/images/logo_mipeluqueriapp.svg',
-                height: getProportionteScreenWidth(180),
+                height: getProportionteScreenHeight(150),
               ),
               Spacer(),
               Text(
-                'Bienvienido mi_peluqueriapp',
+                'Bienvienido\nMi PeluqueriApp',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: getProportionteScreenWidth(28),
@@ -33,6 +33,7 @@ class SignInBody extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
+              Spacer(),
               Text(
                 'Logueo con su email y contraseña o\n ingresa con su cuenta de red social',
                 textAlign: TextAlign.center,
