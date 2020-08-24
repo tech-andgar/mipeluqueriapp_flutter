@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/forgot_password/forgot_password_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_no_account_text.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
@@ -63,19 +65,7 @@ class SignInBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: getProportionteScreenHeight(20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "¿No tienes cuenta registrada?     ",
-                      style: TextStyle(fontSize: getProportionteScreenWidth(16)),
-                    ),
-                    Text(
-                      "Registrar",
-                      style: TextStyle(fontSize: getProportionteScreenWidth(16), color: kPrimaryColor),
-                    ),
-                  ],
-                )
+                NoAccountText()
               ],
             ),
           ),
