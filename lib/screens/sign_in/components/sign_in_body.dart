@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mi_peluqueriapp/constants.dart';
-import 'package:mi_peluqueriapp/screens/forgot_password/forgot_password_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_no_account_text.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
