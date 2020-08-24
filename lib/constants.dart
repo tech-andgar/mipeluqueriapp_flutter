@@ -25,3 +25,11 @@ const kPrimaryGradientColor =
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
+
+// Form Error
+// final RegExp emailValidatorRegExp
+const String kEmailNullError = 'Por favor escriba su email';
+const String kInvalidEmailError = 'Por favor escriba correctamente su email';
+const String kPassNullError = 'Por favor escriba su contraseña';
+const String kSortPassError = 'Su contraseña es muy debil';
+const String kMatchPassError = 'Su contraseña no conacuerde ingresa';
