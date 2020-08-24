@@ -1,6 +1,5 @@
-
-import 'package:MIPELUQUERIAPP/constants.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SignInContent extends StatelessWidget {
@@ -18,7 +17,7 @@ class SignInContent extends StatelessWidget {
       children: [
         Spacer(),
         Text(
-          "Mi PeluqueriApp",
+          kTextTitleApp,
           style: TextStyle(
             fontSize: getProportionteScreenWidth(36),
             color: kPrimaryColor,

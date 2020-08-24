@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:MIPELUQUERIAPP/components/button/default_button.dart';
-import 'package:MIPELUQUERIAPP/constants.dart';
-import 'package:MIPELUQUERIAPP/screens/sign_in/sign_in_screen.dart';
-import 'package:MIPELUQUERIAPP/screens/splash/components/splash_content.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/components/button/default_button.dart';
+import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/sign_in_screen.dart';
+import 'package:mi_peluqueriapp/screens/splash/components/splash_content.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 
 class SplashBody extends StatefulWidget {
   SplashBody({Key key}) : super(key: key);

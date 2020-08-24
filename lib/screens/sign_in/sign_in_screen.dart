@@ -1,5 +1,5 @@
-import 'package:MIPELUQUERIAPP/screens/sign_in/components/sign_in_body.dart';
-// import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_body.dart';
+// import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {

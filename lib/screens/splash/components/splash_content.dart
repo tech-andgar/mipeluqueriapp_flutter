@@ -1,5 +1,5 @@
-import 'package:MIPELUQUERIAPP/constants.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

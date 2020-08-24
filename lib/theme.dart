@@ -1,4 +1,4 @@
-import 'package:MIPELUQUERIAPP/constants.dart';
+import 'package:mi_peluqueriapp/constants.dart';
 import 'package:flutter/material.dart';
 
 ThemeData themeLight() {

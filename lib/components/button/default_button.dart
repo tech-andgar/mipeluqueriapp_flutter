@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
-import 'package:MIPELUQUERIAPP/constants.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
+import 'package:mi_peluqueriapp/constants.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({

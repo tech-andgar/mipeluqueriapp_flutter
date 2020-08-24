@@ -1,6 +1,6 @@
-import 'package:MIPELUQUERIAPP/components/button/default_button.dart';
-import 'package:MIPELUQUERIAPP/screens/sign_in/components/custom_surffix_icon.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/components/button/default_button.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/components/custom_surffix_icon.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,7 +25,7 @@ class SignInBody extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                'Bienvienido MIPELUQUERIAPP',
+                'Bienvienido mi_peluqueriapp',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: getProportionteScreenWidth(28),

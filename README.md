@@ -1,6 +1,6 @@
-# MIPELUQUERIAPP
+# mi_peluqueriapp
 
-A new Flutter project.
+App Mi Peluqueria 
 
 ## Getting Started
 

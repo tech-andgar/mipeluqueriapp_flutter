@@ -1,5 +1,5 @@
-import 'package:MIPELUQUERIAPP/screens/splash/components/splash_body.dart';
-import 'package:MIPELUQUERIAPP/size_config.dart';
+import 'package:mi_peluqueriapp/screens/splash/components/splash_body.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
