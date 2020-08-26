@@ -15,9 +15,9 @@ class _SplashBodyState extends State<SplashBody> {
   int currentPage = 0;
 
   List<Map<String, String>> splashData = [
-    {"text": "Lorem luspum", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
-    {"text": "Bienvienido al Mi PeluqueriApp, vamos pedirla!", 'image': 'assets/images/splash_1.jpg'},
-    {"text": "Nos ayuda personas conectar con los profesionales en Colombia", 'image': 'assets/images/splash_2.jpg'},
+    {"text": "Tu app de belleza \nUna nueva forma de interactuar entre \n peluquerías y clientes", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
+    {"text": "Ayuda a las personas a conectar con \nlos profesionales de la belleza en Colombia", 'image': 'assets/images/splash_2.jpg'},
+    {"text": "Bienvenido", 'image': 'assets/images/login.svg'},
   ];
 
   @override
@@ -65,7 +65,7 @@ class _SplashBodyState extends State<SplashBody> {
                       width: double.infinity,
                       height: getProportionteScreenWidth(56),
                       child: DefaultButton(
-                        text: 'Contiunar',
+                        text: 'Continuar',
                         press: () {
                           Navigator.pushNamed(context, SignInScreen.routeName);
                         },

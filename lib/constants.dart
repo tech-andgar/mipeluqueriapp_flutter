@@ -32,4 +32,4 @@ const String kEmailNullError = 'Por favor escriba su email';
 const String kInvalidEmailError = 'Por favor escriba correctamente su email';
 const String kPassNullError = 'Por favor escriba su contraseña';
 const String kSortPassError = 'Su contraseña es muy debil';
-const String kMatchPassError = 'Su contraseña no conacuerde ingresa';
+const String kMatchPassError = 'Su contraseña no concuerda ingresa';

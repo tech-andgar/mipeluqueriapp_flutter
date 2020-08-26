@@ -39,7 +39,7 @@ class SignInBody extends StatelessWidget {
                 ),
                 SizedBox(height: getProportionteScreenHeight(20)),
                 Text(
-                  'Logueo con su email y contraseña o\n ingresa con su cuenta de red social',
+                  'Logueate con tu Email o\nIngresa con tu cuenta de red social',
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
