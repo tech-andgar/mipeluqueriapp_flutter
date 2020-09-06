@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mi_peluqueriapp/constants.dart';
 import 'package:mi_peluqueriapp/screens/forgot_password/forgot_password_screen.dart';
@@ -11,21 +10,30 @@ class NoAccountText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "¿No tienes cuenta registrada?     ",
-          style: TextStyle(fontSize: getProportionteScreenWidth(16)),
-        ),
-        GestureDetector(
-          onTap: () => Navigator.popAndPushNamed(context, ForgotPasswordScreen.routeName),
-          child: Text(
-            "Registrar",
-            style: TextStyle(fontSize: getProportionteScreenWidth(16), color: kPrimaryColor),
+    return Padding(
+      padding: EdgeInsets.only(bottom: 48),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Spacer(),
+          Text(
+            "¿No tienes cuenta registrada?",
+            style: TextStyle(fontSize: getProportionteScreenWidth(16)),
           ),
-        ),
-      ],
+          Spacer(),
+          InkWell(
+            onTap: () => Navigator.popAndPushNamed(context, ForgotPasswordScreen.routeName), // TODO SCREEN SIGN UP
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Registrar",
+                style: TextStyle(fontSize: getProportionteScreenWidth(16), color: kPrimaryColor),
+              ),
+            ),
+          ),
+          Spacer(),
+        ],
+      ),
     );
   }
 }

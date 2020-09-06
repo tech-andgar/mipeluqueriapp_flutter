@@ -34,28 +34,51 @@ class _SignFormState extends State<SignForm> {
           buildPasswordFormField(),
           SizedBox(height: getProportionteScreenHeight(30)),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Checkbox(
-                value: _rememberPassword,
-                activeColor: kPrimaryColor,
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    _rememberPassword = !_rememberPassword;
+                  });
+                },
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: _rememberPassword,
+                      activeColor: kPrimaryColor,
                 onChanged: (value) {
                   setState(() {
                     _rememberPassword = value;
                   });
-                },
-              ),
-              Text("Recordar contraseña"),
-              Spacer(),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
-                },
-                child: Text(
-                  "Recuperar contraseña",
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),
+                      },
+                    ),
+                    Text("Recordar contraseña"),
+                  ],
                 ),
+              ),
+              Spacer(),
+              Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Recuperar contraseña",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               )
             ],
           ),

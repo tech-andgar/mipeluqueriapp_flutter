@@ -13,11 +13,11 @@ class SocialCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: press,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: getProportionteScreenHeight(10)),
-        padding: EdgeInsets.all(getProportionteScreenWidth(12)),
+        padding: EdgeInsets.all(getProportionteScreenWidth(5)),
         height: getProportionteScreenHeight(40),
         width: getProportionteScreenWidth(40),
         decoration: BoxDecoration(
