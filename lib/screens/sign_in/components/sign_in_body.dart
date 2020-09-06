@@ -16,7 +16,7 @@ class SignInBody extends StatefulWidget {
 }
 
 class _SignInBodyState extends State<SignInBody> {
-  FirebaseUser user;
+  User user;
 
   @override
   Widget build(BuildContext context) {
