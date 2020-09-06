@@ -30,9 +30,9 @@ class _SignFormState extends State<SignForm> {
       child: Column(
         children: [
           buildEmailFormField(),
-          SizedBox(height: getProportionteScreenHeight(30)),
+          SizedBox(height: getProportionteScreenHeight(20)),
           buildPasswordFormField(),
-          SizedBox(height: getProportionteScreenHeight(30)),
+          SizedBox(height: getProportionteScreenHeight(10)),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -82,9 +82,9 @@ class _SignFormState extends State<SignForm> {
               )
             ],
           ),
-          SizedBox(height: getProportionteScreenHeight(20)),
+          SizedBox(height: getProportionteScreenHeight(10)),
           FormErrors(errors: errors),
-          SizedBox(height: getProportionteScreenHeight(20)),
+          SizedBox(height: getProportionteScreenHeight(0)),
           SizedBox(
             width: double.infinity,
             height: getProportionteScreenWidth(56),

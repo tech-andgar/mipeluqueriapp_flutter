@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/screens/login_success/login_success_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
@@ -30,14 +31,11 @@ class _SignInBodyState extends State<SignInBody> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // SvgPicture.asset(
-                //   'assets/images/logo_mipeluqueriapp.svg',
-                //   height: getProportionteScreenHeight(150),
-                // ),
-                // SizedBox(
-                //   height: getProportionteScreenHeight(20),
-                // ),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SvgPicture.asset(
+                  'assets/images/logo_mipeluqueriapp.svg',
+                  height: getProportionteScreenHeight(50),
+                ),
+                SizedBox(height: SizeConfig.screenHeight * 0.01),
                 Text(
                   'Bienvienido\nMi PeluqueriApp',
                   style: TextStyle(
@@ -47,14 +45,14 @@ class _SignInBodyState extends State<SignInBody> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: getProportionteScreenHeight(20)),
+                SizedBox(height: getProportionteScreenHeight(10)),
                 Text(
                   'Logueate con tu Email o\nIngresa con tu cuenta de red social',
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.02),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -65,10 +63,8 @@ class _SignInBodyState extends State<SignInBody> {
                     SocialCard(
                       icon: FontAwesomeIcons.google,
                       press: () {
-                        signInWithGoogle().then((user) => {
-                          this.user = user,
-                          Navigator.pushNamed(context, LoginSuccessScreen.routeName)
-                        });
+                        signInWithGoogle().then(
+                            (user) => {this.user = user, Navigator.pushNamed(context, LoginSuccessScreen.routeName)});
                       },
                     ),
                     SocialCard(
@@ -77,7 +73,7 @@ class _SignInBodyState extends State<SignInBody> {
                     ),
                   ],
                 ),
-                SizedBox(height: getProportionteScreenHeight(20)),
+                SizedBox(height: getProportionteScreenHeight(10)),
                 NoAccountText()
               ],
             ),
