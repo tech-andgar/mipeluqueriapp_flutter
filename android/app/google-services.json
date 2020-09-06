@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "546102894139",
+    "firebase_url": "https://mipeluqueriapp.firebaseio.com",
+    "project_id": "mipeluqueriapp",
+    "storage_bucket": "mipeluqueriapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546102894139:android:e17a8536561531f213461e",
+        "android_client_info": {
+          "package_name": "co.com.mipeluqueriapp.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546102894139-ddl1okeeihfb8bru064l76mkv4ijkcvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCBvs-g8lk9uoNKVA60R94k2Mcs5zRcNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546102894139-ddl1okeeihfb8bru064l76mkv4ijkcvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
