@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/components/button/default_button.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/services/auth.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/sign_in_screen.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class LoginSuccessBody extends StatelessWidget {
@@ -36,6 +38,13 @@ class LoginSuccessBody extends StatelessWidget {
               text: "Ir al Inicio",
               press: () {},
             ),
+          ),
+          DefaultButton(
+            text: "Sign out",
+            press: () {
+              signOutGoogle();
+              Navigator.pushNamed(context, SignInScreen.routeName);
+            },
           ),
           Spacer(),
         ],

@@ -1,12 +1,22 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mi_peluqueriapp/screens/login_success/login_success_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_no_account_text.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/services/auth.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
-class SignInBody extends StatelessWidget {
+class SignInBody extends StatefulWidget {
   // const SignInBody({Key key}) : super(key: key);
+
+  @override
+  _SignInBodyState createState() => _SignInBodyState();
+}
+
+class _SignInBodyState extends State<SignInBody> {
+  FirebaseUser user;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +64,12 @@ class SignInBody extends StatelessWidget {
                     ),
                     SocialCard(
                       icon: FontAwesomeIcons.google,
-                      press: () {},
+                      press: () {
+                        signInWithGoogle().then((user) => {
+                          this.user = user,
+                          Navigator.pushNamed(context, LoginSuccessScreen.routeName)
+                        });
+                      },
                     ),
                     SocialCard(
                       icon: FontAwesomeIcons.twitter,
