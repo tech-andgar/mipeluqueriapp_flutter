@@ -10,7 +10,10 @@ import 'package:mi_peluqueriapp/screens/sign_in/components/form_error.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class SignForm extends StatefulWidget {
-  // SignForm({Key key}) : super(key: key);
+  final bool isDialog;
+  final List<FocusNode> nodesText;
+
+  SignForm({Key key, this.isDialog = false, this.nodesText}) : super(key: key);
 
   @override
   _SignFormState createState() => _SignFormState();
@@ -29,9 +32,13 @@ class _SignFormState extends State<SignForm> {
       key: _formKey,
       child: Column(
         children: [
-          buildEmailFormField(),
+          buildEmailFormField(
+            focusNode: widget.nodesText[0],
+          ),
           SizedBox(height: getProportionteScreenHeight(20)),
-          buildPasswordFormField(),
+          buildPasswordFormField(
+            focusNode: widget.nodesText[1],
+          ),
           SizedBox(height: getProportionteScreenHeight(10)),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,10 +54,10 @@ class _SignFormState extends State<SignForm> {
                     Checkbox(
                       value: _rememberPassword,
                       activeColor: kPrimaryColor,
-                onChanged: (value) {
-                  setState(() {
-                    _rememberPassword = value;
-                  });
+                      onChanged: (value) {
+                        setState(() {
+                          _rememberPassword = value;
+                        });
                       },
                     ),
                     Text("Recordar contraseña"),
@@ -84,7 +91,7 @@ class _SignFormState extends State<SignForm> {
           ),
           SizedBox(height: getProportionteScreenHeight(10)),
           FormErrors(errors: errors),
-          SizedBox(height: getProportionteScreenHeight(0)),
+          SizedBox(height: getProportionteScreenHeight(10)),
           SizedBox(
             width: double.infinity,
             height: getProportionteScreenWidth(56),
@@ -110,9 +117,10 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-  TextFormField buildPasswordFormField() {
+  TextFormField buildPasswordFormField({FocusNode focusNode}) {
     return TextFormField(
       obscureText: true,
+      focusNode: focusNode,
       keyboardType: TextInputType.visiblePassword,
       onSaved: (newValue) => _password = newValue,
       onChanged: (value) {
@@ -152,8 +160,9 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-  TextFormField buildEmailFormField() {
+  TextFormField buildEmailFormField({FocusNode focusNode}) {
     return TextFormField(
+      focusNode: focusNode,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => _email = newValue,
       onChanged: (value) {
@@ -174,7 +183,6 @@ class _SignFormState extends State<SignForm> {
             errors.add(kEmailNullError);
           });
           return '';
-
         } else if (!EmailValidator.validate(value) && !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
