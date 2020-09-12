@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 
 const kTextTitleApp = 'Mi PeluqueriApp';
 // 1° OPTION
@@ -25,6 +26,13 @@ const kPrimaryGradientColor =
 const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
+
+final kHeadingStyle = TextStyle(
+  color: Colors.black,
+  fontSize: getProportionteScreenWidth(28),
+  fontWeight: FontWeight.bold,
+  height: 1.5,
+);
 
 // Form Error
 // final RegExp emailValidatorRegExp
