@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mi_peluqueriapp/constants.dart';
 import 'package:mi_peluqueriapp/screens/forgot_password/forgot_password_screen.dart';
+import 'package:mi_peluqueriapp/screens/sign_up/sign_up_screen.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class NoAccountText extends StatelessWidget {
@@ -22,7 +23,7 @@ class NoAccountText extends StatelessWidget {
           ),
           Spacer(),
           InkWell(
-            onTap: () => Navigator.popAndPushNamed(context, ForgotPasswordScreen.routeName), // TODO SCREEN SIGN UP
+            onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
             child: Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
