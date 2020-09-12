@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:keyboard_actions/external/platform_check/platform_check.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 import 'package:mi_peluqueriapp/screens/login_success/login_success_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
@@ -190,10 +191,10 @@ class _SignInBodyState extends State<SignInBody> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // SocialCard(
-                      //   icon: FontAwesomeIcons.facebookF,
-                      //   press: () {},
-                      // ),
+                      SocialCard(
+                        icon: FontAwesomeIcons.facebookF,
+                        press: () {},
+                      ),
                       SocialCard(
                         icon: FontAwesomeIcons.google,
                         press: () {
@@ -201,14 +202,15 @@ class _SignInBodyState extends State<SignInBody> {
                               (user) => {this.user = user, Navigator.pushNamed(context, LoginSuccessScreen.routeName)});
                         },
                       ),
-                      // SocialCard(
-                      //   icon: FontAwesomeIcons.twitter,
-                      //   press: () {},
-                      // ),
-                      SocialCard(
-                        icon: FontAwesomeIcons.apple,
-                        press: () {},
-                      ),
+                      (PlatformCheck.isIOS)
+                          ? SocialCard(
+                              icon: FontAwesomeIcons.apple,
+                              press: () {},
+                            )
+                          : SocialCard(
+                              icon: FontAwesomeIcons.twitter,
+                              press: () {},
+                            ),
                     ],
                   ),
                   SizedBox(height: getProportionteScreenHeight(10)),
