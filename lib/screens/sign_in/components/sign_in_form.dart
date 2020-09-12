@@ -21,10 +21,26 @@ class SignForm extends StatefulWidget {
 
 class _SignFormState extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
-  final List<String> errors = [];
   String _email;
   String _password;
   bool _rememberPassword = false;
+  final List<String> errors = [];
+
+  void addError({String error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error);
+      });
+    }
+  }
+
+  void removeError({String error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,27 +140,19 @@ class _SignFormState extends State<SignForm> {
       keyboardType: TextInputType.visiblePassword,
       onSaved: (newValue) => _password = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kPassNullError)) {
-          setState(() {
-            errors.remove(kPassNullError);
-          });
-        } else if (value.length >= 8 && errors.contains(kSortPassError)) {
-          setState(() {
-            errors.remove(kSortPassError);
-          });
+        if (value.isNotEmpty) {
+          removeError(error: kPassNullError);
+        } else if (value.length >= 8) {
+          removeError(error: kSortPassError);
         }
         return null;
       },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kPassNullError)) {
-          setState(() {
-            errors.add(kPassNullError);
-          });
+        if (value.isEmpty) {
+          addError(error: kPassNullError);
           return '';
-        } else if (value.length < 8 && !errors.contains(kSortPassError)) {
-          setState(() {
-            errors.add(kSortPassError);
-          });
+        } else if (value.length < 8) {
+          addError(error: kSortPassError);
           return '';
         }
         return null;
@@ -166,27 +174,19 @@ class _SignFormState extends State<SignForm> {
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => _email = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty && errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.remove(kEmailNullError);
-          });
-        } else if (EmailValidator.validate(value) && errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.remove(kInvalidEmailError);
-          });
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (EmailValidator.validate(value)) {
+          removeError(error: kInvalidEmailError);
         }
         return null;
       },
       validator: (value) {
-        if (value.isEmpty && !errors.contains(kEmailNullError)) {
-          setState(() {
-            errors.add(kEmailNullError);
-          });
+        if (value.isEmpty) {
+          addError(error: kEmailNullError);
           return '';
-        } else if (!EmailValidator.validate(value) && !errors.contains(kInvalidEmailError)) {
-          setState(() {
-            errors.add(kInvalidEmailError);
-          });
+        } else if (!EmailValidator.validate(value)) {
+          addError(error: kInvalidEmailError);
           return '';
         }
         return null;
