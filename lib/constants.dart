@@ -41,3 +41,7 @@ const String kInvalidEmailError = 'Por favor escriba correctamente su email';
 const String kPassNullError = 'Por favor escriba su contraseña';
 const String kSortPassError = 'Su contraseña es muy debil';
 const String kMatchPassError = 'Su contraseña no concuerda ingresa';
+const String kNameFirstNullError = 'Por favor escriba su nombre';
+const String kNameLastNullError = 'Por favor escriba su apellido';
+const String kPhoneNumberNullError = 'Por favor escriba su número teléfono';
+const String kAddressNullError = 'Por favor escriba su dirección';

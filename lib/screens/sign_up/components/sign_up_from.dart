@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/components/button/default_button.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/complete_profile/complete_profile_screen.dart';
 import 'package:mi_peluqueriapp/screens/forgot_password/forgot_password_screen.dart';
 import 'package:mi_peluqueriapp/screens/login_success/login_success_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/custom_surffix_icon.dart';
@@ -67,7 +68,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   _formKey.currentState.save();
 
                   // TODO if all are vali then go to success screen
-                  Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                  Navigator.pushNamed(context, CompleteProfileScreen.routeName);
                   // Scaffold.of(context).showSnackBar(
                   //   SnackBar(
                   //     content: Text('Processing Data'),
