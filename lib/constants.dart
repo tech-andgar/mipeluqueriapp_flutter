@@ -45,3 +45,19 @@ const String kNameFirstNullError = 'Por favor escriba su nombre';
 const String kNameLastNullError = 'Por favor escriba su apellido';
 const String kPhoneNumberNullError = 'Por favor escriba su número teléfono';
 const String kAddressNullError = 'Por favor escriba su dirección';
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionteScreenWidth(15),
+  ),
+  enabledBorder: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  border: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+  borderRadius: BorderRadius.circular(15),
+  borderSide: BorderSide(color: kTextColor),
+);
+}

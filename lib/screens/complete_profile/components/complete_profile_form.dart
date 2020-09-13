@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/components/button/default_button.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/otp/otp_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/custom_surffix_icon.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/form_error.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
@@ -64,6 +65,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 // Go to OTP Screen
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
           )
