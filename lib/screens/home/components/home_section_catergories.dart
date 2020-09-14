@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/screens/home/components/home_category_card.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({
+class SectionCategories extends StatelessWidget {
+  const SectionCategories({
     Key key,
   }) : super(key: key);
 
