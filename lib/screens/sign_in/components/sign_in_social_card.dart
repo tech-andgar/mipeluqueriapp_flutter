@@ -15,8 +15,8 @@ class SocialCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: press,
+      borderRadius: BorderRadius.circular(50),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: getProportionteScreenHeight(10)),
         padding: EdgeInsets.all(getProportionteScreenWidth(3)),
         height: getProportionteScreenHeight(40),
         width: getProportionteScreenWidth(40),
