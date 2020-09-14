@@ -28,7 +28,11 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {},
       ),
       actions: [
-        IconButton(icon: ClipOval(child: Image.network('https://picsum.photos/id/6/600/600'),), onPressed: (){})
+        IconButton(
+            icon: ClipOval(
+              child: Image.network('https://picsum.photos/id/6/600/600'),
+            ),
+            onPressed: () {})
       ],
     );
   }
