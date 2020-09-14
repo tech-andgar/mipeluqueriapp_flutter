@@ -57,7 +57,15 @@ final otpInputDecoration = InputDecoration(
 
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
-  borderRadius: BorderRadius.circular(15),
-  borderSide: BorderSide(color: kTextColor),
-);
+    borderRadius: BorderRadius.circular(15),
+    borderSide: BorderSide(color: kTextColor),
+  );
 }
+
+final double kDefaultPadding = 20.0;
+
+final BoxShadow kDefaultShadow = BoxShadow(
+  offset: Offset(5, 5),
+  blurRadius: 10,
+  color: Color(0xFFE9E9E9).withOpacity(0.56),
+);
