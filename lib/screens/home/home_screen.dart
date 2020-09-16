@@ -29,10 +29,11 @@ class HomeScreen extends StatelessWidget {
       ),
       actions: [
         IconButton(
-            icon: ClipOval(
-              child: Image.network('https://picsum.photos/id/6/600/600'),
-            ),
-            onPressed: () {})
+          icon: ClipOval(
+            child: Image.network('https://picsum.photos/id/6/600/600'),
+          ),
+          onPressed: () {},
+        )
       ],
     );
   }

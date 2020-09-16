@@ -63,7 +63,7 @@ class BottomNavBarItem extends StatelessWidget {
       onTap: press,
       child: Container(
         padding: EdgeInsets.all(5),
-        height: getProportionteScreenWidth(60),
+        height: getProportionteScreenWidth(54),
         width: getProportionteScreenWidth(60),
         decoration: BoxDecoration(
           color: Colors.white,
