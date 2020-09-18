@@ -25,7 +25,7 @@ class CategoriesServicesCard extends StatelessWidget {
       ),
       child: SizedBox(
         width: getProportionteScreenWidth(155),
-        height: getProportionteScreenWidth(125),
+        height: getProportionteScreenWidth(130),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Stack(

@@ -26,7 +26,7 @@ class CategoriesServices extends StatelessWidget {
             CategoriesServicesCard(
               image: Image.network(
                 'https://loremflickr.com/320/240/cut,hair',
-                height: getProportionteScreenWidth(140),
+                height: getProportionteScreenWidth(160),
                 fit: BoxFit.cover,
               ),
               titleCategory: "Cortes de cabello",
@@ -36,7 +36,7 @@ class CategoriesServices extends StatelessWidget {
             CategoriesServicesCard(
               image: Image.network(
                 'https://loremflickr.com/320/240/hairstyles,hairdresser',
-                height: getProportionteScreenWidth(140),
+                height: getProportionteScreenWidth(160),
                 fit: BoxFit.cover,
               ),
               titleCategory: "Peinados",
@@ -46,7 +46,7 @@ class CategoriesServices extends StatelessWidget {
             CategoriesServicesCard(
               image: Image.network(
                 'https://loremflickr.com/320/240/manicure,nails',
-                height: getProportionteScreenWidth(140),
+                height: getProportionteScreenWidth(160),
                 fit: BoxFit.cover,
               ),
               titleCategory: "Manicure",
@@ -56,7 +56,7 @@ class CategoriesServices extends StatelessWidget {
             CategoriesServicesCard(
               image: Image.network(
                 'https://loremflickr.com/320/240/pedicure,nails',
-                height: getProportionteScreenWidth(140),
+                height: getProportionteScreenWidth(160),
                 fit: BoxFit.cover,
               ),
               titleCategory: "Pedicure",
