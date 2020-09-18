@@ -27,6 +27,40 @@ Future<User> signInWithGoogle() async {
   return user;
 }
 
+void signUpWithEmail({email: String, password: String}) async {
+  UserCredential user;
+  try {
+    user = await _auth.createUserWithEmailAndPassword(email: null, password: null);
+  } catch (e) {
+    print(e.toString());
+  } finally {
+    if (user != null) {
+      // Sign in sucessfull
+    } else {
+      // Sign in unsucessfull
+    }
+  }
+}
+
+void signInWithEmail({email: String, password: String}) async {
+  UserCredential user;
+  try {
+    user = await _auth.signInWithEmailAndPassword(email: null, password: null);
+  } catch (e) {
+    print(e.toString());
+  } finally {
+    if (user != null) {
+      // Sign in sucessfull
+    } else {
+      // Sign in unsucessfull
+    }
+  }
+}
+
+Future<User> getUser() async {
+  return _auth.currentUser;
+}
+
 void signOutGoogle() async {
   await googleSignIn.signOut();
 }
