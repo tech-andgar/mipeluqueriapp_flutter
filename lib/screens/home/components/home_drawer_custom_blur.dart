@@ -132,7 +132,7 @@ class CustomBlurDrawer extends StatelessWidget {
                                 ),
                               ),
                               onTap: () {
-                                // signOutAndToHome(context);
+                                signOutAndToHome(context);
                                 // Navigator.pop(context);
                               },
                             )
