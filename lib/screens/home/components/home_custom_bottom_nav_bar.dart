@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi_peluqueriapp/constants.dart';
@@ -16,10 +16,18 @@ class CustomBottomNavBar extends StatelessWidget {
       color: Colors.white,
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionteScreenWidth(20), vertical: getProportionteScreenHeight(8)),
+          padding: EdgeInsets.symmetric(
+            horizontal: getProportionteScreenWidth(20),
+            vertical: getProportionteScreenHeight(8),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              BottomNavBarItem(
+                icon: FontAwesomeIcons.history,
+                title: 'Historial',
+                press: () {},
+              ),
               BottomNavBarItem(
                 icon: FontAwesomeIcons.home,
                 title: 'Inicio',
@@ -27,14 +35,11 @@ class CustomBottomNavBar extends StatelessWidget {
                 press: () {},
               ),
               BottomNavBarItem(
-                icon: FontAwesomeIcons.facebookMessenger,
-                title: 'Chat',
-                press: () {},
-              ),
-              BottomNavBarItem(
                 icon: FontAwesomeIcons.tools,
                 title: 'Ajustes',
-                press: () {},
+                press: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
               ),
             ],
           ),
@@ -59,26 +64,57 @@ class BottomNavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press,
+    return NeumorphicButton(
+      onPressed: press,
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionteScreenHeight(15),
+        vertical: getProportionteScreenHeight(5),
+      ),
       child: Container(
-        padding: EdgeInsets.all(5),
-        height: getProportionteScreenWidth(54),
-        width: getProportionteScreenWidth(60),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [if (isActive) kDefaultShadow],
-        ),
+        height: getProportionteScreenWidth(45),
         child: Column(
           children: [
-            _buildIconCheckType(icon: icon, size: 28),
+            _buildIconCheckType(
+              icon: icon,
+              size: 28,
+              color: (isActive) ? kPrimaryColor : Colors.black45,
+            ),
             Spacer(),
-            Text(title, style: TextStyle(fontSize: getProportionteScreenWidth(13)),),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: getProportionteScreenWidth(13),
+                color: (isActive) ? kPrimaryColor : Colors.black45,
+              ),
+            ),
           ],
         ),
       ),
+      style: NeumorphicStyle(color: Colors.white),
     );
+    // InkWell(
+    //   onTap: press,
+    //   child: Container(
+    //     padding: EdgeInsets.all(5),
+    //     height: getProportionteScreenWidth(54),
+    //     width: getProportionteScreenWidth(60),
+    //     decoration: BoxDecoration(
+    //       color: Colors.white,
+    //       borderRadius: BorderRadius.circular(10),
+    //       boxShadow: [if (isActive) kDefaultShadow],
+    //     ),
+    //     child: Column(
+    //       children: [
+    //         _buildIconCheckType(icon: icon, size: 28),
+    //         Spacer(),
+    //         Text(
+    //           title,
+    //           style: TextStyle(fontSize: getProportionteScreenWidth(13)),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 
   Widget _buildIconCheckType({

@@ -32,13 +32,13 @@ class SectionTitle extends StatelessWidget {
             InkWell(
               child: Padding(
                 padding: EdgeInsets.all(8.0),
-              child: Text(
-                "Mirar más",
-                style: TextStyle(),
+                child: Text(
+                  "Mirar más",
+                  style: TextStyle(),
+                ),
               ),
-            ),
-            onTap: () {},
-          )
+              onTap: () {},
+            )
         ],
       ),
     );
