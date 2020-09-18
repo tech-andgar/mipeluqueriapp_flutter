@@ -112,12 +112,12 @@ class _SignFormState extends State<SignForm> {
             width: double.infinity,
             height: getProportionteScreenWidth(56),
             child: DefaultButton(
-              text: 'Continuar',
+              text: 'Ingresar',
               press: () {
                 if (_formKey.currentState.validate()) {
                   _formKey.currentState.save();
 
-                  // TODO if all are vali then go to success screen
+                  // TODO if all are valid then go to success screen
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                   // Scaffold.of(context).showSnackBar(
                   //   SnackBar(

@@ -9,6 +9,7 @@ import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_form.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_no_account_text.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/services/auth.dart';
+import 'package:mi_peluqueriapp/services/auth.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class SignInBody extends StatefulWidget {
@@ -191,26 +192,30 @@ class _SignInBodyState extends State<SignInBody> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SocialCard(
-                        icon: FontAwesomeIcons.facebookF,
-                        press: () {},
-                      ),
+                      // SocialCard(
+                      //   icon: FontAwesomeIcons.facebookF,
+                      //   press: () {},
+                      // ),
                       SocialCard(
                         icon: FontAwesomeIcons.google,
                         press: () {
                           signInWithGoogle().then(
-                              (user) => {this.user = user, Navigator.pushNamed(context, LoginSuccessScreen.routeName)});
+                            (user) => {
+                              this.user = user,
+                              Navigator.pushNamed(context, LoginSuccessScreen.routeName),
+                            },
+                          );
                         },
                       ),
-                      (PlatformCheck.isIOS)
-                          ? SocialCard(
-                              icon: FontAwesomeIcons.apple,
-                              press: () {},
-                            )
-                          : SocialCard(
-                              icon: FontAwesomeIcons.twitter,
-                              press: () {},
-                            ),
+                      // (PlatformCheck.isIOS)
+                      //     ? SocialCard(
+                      //         icon: FontAwesomeIcons.apple,
+                      //         press: () {},
+                      //       )
+                      //     : SocialCard(
+                      //         icon: FontAwesomeIcons.twitter,
+                      //         press: () {},
+                      //       ),
                     ],
                   ),
                   SizedBox(height: getProportionteScreenHeight(10)),
