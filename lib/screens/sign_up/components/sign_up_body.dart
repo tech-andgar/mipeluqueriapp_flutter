@@ -1,19 +1,13 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
-import 'package:mi_peluqueriapp/screens/login_success/login_success_screen.dart';
-import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
-import 'package:mi_peluqueriapp/screens/sign_in/services/auth.dart';
-import 'package:mi_peluqueriapp/screens/sign_up/components/sign_up_from.dart';
-// import 'package:mi_peluqueriapp/screens/sign_up/components/sign_up_no_account_text.dart';
-// import 'package:mi_peluqueriapp/screens/sign_up/components/sign_up_social_card.dart';
-// import 'package:mi_peluqueriapp/screens/sign_up/services/auth.dart';
-import 'package:mi_peluqueriapp/size_config.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/complete_profile/complete_profile_screen.dart';
+import 'package:mi_peluqueriapp/screens/sign_in/components/sign_in_social_card.dart';
+import 'package:mi_peluqueriapp/screens/sign_up/components/sign_up_from.dart';
+import 'package:mi_peluqueriapp/services/auth.dart';
+import 'package:mi_peluqueriapp/size_config.dart';
 
 class SignUpBody extends StatefulWidget {
   // const SignUpBody({Key key}) : super(key: key);
@@ -31,7 +25,6 @@ class _SignUpBodyState extends State<SignUpBody> {
   /// Creates the [KeyboardActionsConfig] to hook up the fields
   /// and their focus nodes to our [FormKeyboardActions].
   KeyboardActionsConfig _buildConfig(BuildContext context) {
-
     var toolbarButtonsListo = [
       (node) {
         return GestureDetector(
@@ -104,20 +97,20 @@ class _SignUpBodyState extends State<SignUpBody> {
                           signInWithGoogle().then(
                             (user) => {
                               this.user = user,
-                              Navigator.pushNamed(context, LoginSuccessScreen.routeName),
+                              Navigator.pushNamed(context, CompleteProfileScreen.routeName),
                             },
                           );
                         },
                       ),
-                      (Platform.isIOS)
-                          ? SocialCard(
-                              icon: FontAwesomeIcons.apple,
-                              press: () {},
-                            )
-                          : SocialCard(
-                              icon: FontAwesomeIcons.twitter,
-                              press: () {},
-                            ),
+                      // (Platform.isIOS)
+                      //     ? SocialCard(
+                      //         icon: FontAwesomeIcons.apple,
+                      //         press: () {},
+                      //       )
+                      //     : SocialCard(
+                      //         icon: FontAwesomeIcons.twitter,
+                      //         press: () {},
+                      //       ),
                     ],
                   ),
                   SizedBox(height: getProportionteScreenHeight(10)),
