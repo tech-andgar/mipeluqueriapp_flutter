@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/services/auth.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class CustomBlurDrawer extends StatefulWidget {
@@ -123,22 +125,30 @@ class _CustomBlurDrawerState extends State<CustomBlurDrawer> {
                           color: Colors.white,
                         ),
                       ),
+                      leading: NeumorphicIcon(
+                        Icons.account_circle,
+                        size: 28,
+                        style: NeumorphicStyle(
+                          shape: NeumorphicShape.convex,
+                          surfaceIntensity: 1.0,
+                        ),
+                      ),
                       onTap: () {
                         // Navigator.pop(context);
                       },
                     ),
                     ListTile(
-                      // title: Text(
-                      //   "Historial",
-                      //   style: TextStyle(
-                      //     fontWeight: FontWeight.bold,
-                      //     color: Colors.white,
-                      //   ),
-                      // ),
-                      // onTap: () {
-                      //   //   Navigator.pop(context);
-                      // },
-                    ),
+                        // title: Text(
+                        //   "Historial",
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.bold,
+                        //     color: Colors.white,
+                        //   ),
+                        // ),
+                        // onTap: () {
+                        //   //   Navigator.pop(context);
+                        // },
+                        ),
                     ListTile(
                         // title: Text('Item 2'),
                         // onTap: () {
@@ -169,9 +179,13 @@ class _CustomBlurDrawerState extends State<CustomBlurDrawer> {
                             // ),
                             ListTile(),
                             ListTile(
-                              leading: Icon(
+                              leading: NeumorphicIcon(
                                 Icons.exit_to_app,
-                                color: Colors.white,
+                                size: 28,
+                                style: NeumorphicStyle(
+                                  shape: NeumorphicShape.convex,
+                                  surfaceIntensity: 1.0,
+                                ),
                               ),
                               title: Text(
                                 'Cerrar sesión',
