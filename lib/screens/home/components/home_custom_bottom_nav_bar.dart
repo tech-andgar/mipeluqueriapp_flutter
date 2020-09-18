@@ -93,17 +93,25 @@ class BottomNavBarItem extends StatelessWidget {
         height: getProportionteScreenWidth(45),
         child: Column(
           children: [
-            _buildIconCheckType(
-              icon: icon,
+            // _buildIconCheckType(
+            //   icon: icon,
+            //   size: 28,
+            //   color: (isActive) ? kPrimaryColor : Colors.black45,
+            // ),
+            NeumorphicIcon(
+              icon,
               size: 28,
-              color: (isActive) ? kPrimaryColor : Colors.black45,
+              style: NeumorphicStyle(
+                shape: NeumorphicShape.convex,
+                surfaceIntensity: 1.0,
+              ),
             ),
             Spacer(),
             Text(
               title,
               style: TextStyle(
                 fontSize: getProportionteScreenWidth(13),
-                color: (isActive) ? kPrimaryColor : Colors.black45,
+                // color: (isActive) ? kPrimaryColor : Colors.black45,
               ),
             ),
           ],
