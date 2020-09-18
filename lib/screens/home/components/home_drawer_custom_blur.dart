@@ -4,13 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:mi_peluqueriapp/constants.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
-class CustomBlurDrawer extends StatelessWidget {
+class CustomBlurDrawer extends StatefulWidget {
   const CustomBlurDrawer({
     Key key,
     @required this.context,
   }) : super(key: key);
 
   final BuildContext context;
+
+  @override
+  _CustomBlurDrawerState createState() => _CustomBlurDrawerState();
+}
+
+class _CustomBlurDrawerState extends State<CustomBlurDrawer> {
+  String dropdownValue = 'Bogotá';
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +62,53 @@ class CustomBlurDrawer extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      title: Text(
-                        "Ciudad: Bogota",
+                      title: DropdownButton<String>(
+                        value: dropdownValue,
+                        // icon: Icon(Icons.arrow_downward),
+                        // iconSize: 24,
+                        elevation: 16,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
+                          // backgroundColor: kPrimaryColor,
+                        ),
+                        // underline: Container(
+                        //   height: 2,
+                        //   color: Colors.deepPurpleAccent,
+                        // ),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            dropdownValue = newValue;
+                          });
+                        },
+                        items: <String>['Bogotá', 'Medellin', 'Cali', 'Barranquilla'].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: kPrimaryColor,
+                                // backgroundColor: kPrimaryColor,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      // title: Text(
+                      //   "Ciudad: Bogota",
+                      //   style: TextStyle(
+                      //     fontWeight: FontWeight.bold,
+                      //     color: Colors.white,
+                      //   ),
+                      // ),
+                      hoverColor: Colors.black,
+                      leading: NeumorphicIcon(
+                        Icons.person_pin_circle,
+                        size: 28,
+                        style: NeumorphicStyle(
+                          shape: NeumorphicShape.convex,
+                          surfaceIntensity: 1.0,
                         ),
                       ),
                       onTap: () {
