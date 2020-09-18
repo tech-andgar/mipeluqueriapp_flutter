@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mi_peluqueriapp/components/button/default_button.dart';
 import 'package:mi_peluqueriapp/constants.dart';
+import 'package:mi_peluqueriapp/screens/home/home_screen.dart';
 import 'package:mi_peluqueriapp/screens/sign_in/sign_in_screen.dart';
 import 'package:mi_peluqueriapp/screens/splash/components/splash_content.dart';
+import 'package:mi_peluqueriapp/services/auth.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
 class SplashBody extends StatefulWidget {
@@ -12,11 +14,27 @@ class SplashBody extends StatefulWidget {
 }
 
 class _SplashBodyState extends State<SplashBody> {
+  @override
+  void initState() {
+    super.initState();
+    getUser().then((user) {
+      if (user != null) {
+        Navigator.pushNamed(context, HomeScreen.routeName);
+      }
+    });
+  }
+
   int currentPage = 0;
 
   List<Map<String, String>> splashData = [
-    {"text": "Tu app de belleza \nUna nueva forma de interactuar entre \n peluquerías y clientes", 'image': 'assets/images/logo_mipeluqueriapp.svg'},
-    {"text": "Ayuda a las personas a conectar con \nlos profesionales de la belleza en Colombia", 'image': 'assets/images/splash_2.jpg'},
+    {
+      "text": "Tu app de belleza \nUna nueva forma de interactuar entre \n peluquerías y clientes",
+      'image': 'assets/images/logo_mipeluqueriapp.svg'
+    },
+    {
+      "text": "Ayuda a las personas a conectar con \nlos profesionales de la belleza en Colombia",
+      'image': 'assets/images/splash_2.jpg'
+    },
     {"text": "Bienvenido", 'image': 'assets/images/login.svg'},
   ];
 
