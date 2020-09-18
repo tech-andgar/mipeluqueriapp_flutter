@@ -20,8 +20,16 @@ class HomeScreen extends StatelessWidget {
         // child: customOldDrawer(context),
       ),
       appBar: _buildAppBar(),
-      body: HomeBody(),
-      bottomNavigationBar: CustomBottomNavBar(),
+      body: Container(
+        child: Stack(
+          children: <Widget>[
+            HomeBody(),
+            CustomBottomNavBar()
+          ],
+        ),
+      ),
+      // body: HomeBody(),
+      // bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 
