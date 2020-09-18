@@ -18,22 +18,26 @@ class HomeScreen extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: IconButton(
-        icon: Icon(
-          Icons.menu,
+      centerTitle: true,
+      automaticallyImplyLeading: false,
+      title: Text(
+        'Bienvenido Mi PeluqueriApp',
+        textAlign: TextAlign.center,
+        style: TextStyle(
           color: kPrimaryColor,
+          fontSize: getProportionteScreenWidth(20),
+          fontWeight: FontWeight.w600,
         ),
-        onPressed: () {},
       ),
       actions: [
-        IconButton(
-          icon: ClipOval(
-            child: Image.network('https://picsum.photos/id/6/600/600'),
-          ),
-          onPressed: () {},
-        )
+        Container(),
+        // Builder(
+        //   builder: (context) => IconButton(
+        //     icon: Icon(Icons.filter),
+        //     onPressed: () => Scaffold.of(context).openEndDrawer(),
+        //     tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+        //   ),
+        // ),
       ],
     );
   }
