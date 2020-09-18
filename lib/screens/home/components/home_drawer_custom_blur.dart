@@ -16,7 +16,7 @@ class CustomBlurDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipPath(
       child: Container(
-        width: SizeConfig.screenWidth * 0.55,
+        width: SizeConfig.screenWidth * 0.57,
         child: Stack(
           children: [
             BackdropFilter(
@@ -25,12 +25,12 @@ class CustomBlurDrawer extends StatelessWidget {
                 sigmaX: 5.0,
               ),
               child: Container(
-                decoration: BoxDecoration(color: kPrimaryColor.withOpacity(0.5)),
+                decoration: BoxDecoration(color: kSecondaryColor.withOpacity(0.5)),
                 child: ListView(
                   children: [
                     UserAccountsDrawerHeader(
                       decoration: BoxDecoration(
-                        color: kPrimaryColor,
+                        color: kSecondaryColor,
                       ),
                       accountName: Text(
                         'Andrés García',
