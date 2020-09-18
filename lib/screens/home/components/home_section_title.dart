@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mi_peluqueriapp/size_config.dart';
 
@@ -7,7 +6,10 @@ class SectionTitle extends StatelessWidget {
     Key key,
     @required this.title,
     @required this.press,
+    this.enabledClickedMore = true,
   }) : super(key: key);
+
+  final bool enabledClickedMore;
   final String title;
   final GestureTapCallback press;
 
@@ -16,18 +18,20 @@ class SectionTitle extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: getProportionteScreenWidth(20)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: (enabledClickedMore) ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontSize: getProportionteScreenWidth(18),
+              fontSize: (enabledClickedMore) ? getProportionteScreenWidth(18):getProportionteScreenWidth(22),
+              fontWeight: (enabledClickedMore) ? FontWeight.normal : FontWeight.bold,
               color: Colors.black,
             ),
           ),
-          InkWell(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
+          if (enabledClickedMore)
+            InkWell(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
               child: Text(
                 "Mirar más",
                 style: TextStyle(),
