@@ -26,9 +26,9 @@ class _HomeBodyState extends State<HomeBody> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: getProportionteScreenWidth(8)),
-            HomeHeader(),
-            SizedBox(height: getProportionteScreenWidth(15)),
+            // SizedBox(height: getProportionteScreenWidth(8)),
+            // HomeHeader(),
+            // SizedBox(height: getProportionteScreenWidth(15)),
             DiscountBanner(
               press: () {},
               subtitle: 'Cashback 20%',
