@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,36 +14,53 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionteScreenWidth(20),
-            vertical: getProportionteScreenHeight(8),
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 2.0,
+            sigmaY: 2.0,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              BottomNavBarItem(
-                icon: FontAwesomeIcons.history,
-                title: 'Historial',
-                press: () {},
+          child: Opacity(
+            opacity: 0.8,
+            child: Container(
+              // color: Colors.white,
+              height: 100.0,
+              child: SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: getProportionteScreenWidth(20),
+                    vertical: getProportionteScreenHeight(8),
+                  ),
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      BottomNavBarItem(
+                        icon: FontAwesomeIcons.history,
+                        title: 'Historial',
+                        press: () {},
+                      ),
+                      BottomNavBarItem(
+                        icon: FontAwesomeIcons.home,
+                        title: 'Inicio',
+                        isActive: true,
+                        press: () {},
+                      ),
+                      BottomNavBarItem(
+                        icon: FontAwesomeIcons.tools,
+                        title: 'Ajustes',
+                        press: () {
+                          Scaffold.of(context).openEndDrawer();
+                        },
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              BottomNavBarItem(
-                icon: FontAwesomeIcons.home,
-                title: 'Inicio',
-                isActive: true,
-                press: () {},
-              ),
-              BottomNavBarItem(
-                icon: FontAwesomeIcons.tools,
-                title: 'Ajustes',
-                press: () {
-                  Scaffold.of(context).openEndDrawer();
-                },
-              ),
-            ],
+            ),
           ),
         ),
       ),
