@@ -31,8 +31,8 @@ class _HomeBodyState extends State<HomeBody> {
             // SizedBox(height: getProportionteScreenWidth(15)),
             DiscountBanner(
               press: () {},
-              subtitle: 'Cashback 20%',
-              title: 'A Summer Surpise',
+              subtitle: 'Descuento 20% por\nprimer solictud servicio',
+              title: 'Primeros 100 clientes de mi peluqueriApp',
             ),
             // SizedBox(height: getProportionteScreenWidth(10)),
             // SectionCategories(),
