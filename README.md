@@ -1,5 +1,7 @@
 # mi_peluqueriapp
 
+https://github.com/user-attachments/assets/c4d124b8-0f9f-4ad9-8117-0a3cefafe33b
+
 App Mi Peluqueria 
 
 ## Getting Started
