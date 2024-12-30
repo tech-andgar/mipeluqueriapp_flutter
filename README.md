@@ -1,4 +1,4 @@
-# mi_peluqueriapp
+# mi_peluqueriapp - Degree Project
 
 https://github.com/user-attachments/assets/c4d124b8-0f9f-4ad9-8117-0a3cefafe33b
 
